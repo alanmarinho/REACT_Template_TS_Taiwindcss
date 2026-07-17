@@ -1,10 +1,29 @@
-import Hello from '@components/hello';
+import { Routes, Route } from 'react-router-dom';
+import Page404 from '@pages/page404';
+import HomePage from '@pages/home';
+import ExemploPage from '@pages/exemplo';
+
 
 function App() {
   return (
-    <div className="flex flex-1 min-h-screen items-center justify-center text-red-600">
-      <Hello />
-    </div>
+    <>
+      <Routes>
+        <Route
+          path={'/'}
+          element={
+            <HomePage />
+          }
+        />
+        <Route
+          path={'/exemplo'}
+          element={
+            <ExemploPage />
+          }
+        />
+
+        <Route path="*" element={<Page404 />} />
+      </Routes>
+    </>
   );
 }
 
